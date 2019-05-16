@@ -295,7 +295,7 @@ class ConverterExtra extends Converter
             $rows = [];
             // add padding
             array_walk_recursive($this->table['rows'], [&$this, 'alignTdContent']);
-            $header = array_shift($this->table['rows']);
+            $header = array_shift($this->table['rows']) ?? [];
             array_push($rows, '| ' . implode(' | ', $header) . ' |');
             array_push($rows, $separator);
             foreach ($this->table['rows'] as $row) {
